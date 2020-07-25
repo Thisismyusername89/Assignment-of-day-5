@@ -1,0 +1,71 @@
+<html>
+<head>
+    <title>Question1</title>
+</head>
+<body>
+    <script>
+        class user {
+            constructor(name,age,email)
+            {
+            this.name=name;
+            this.age=age;
+            this.email=email;
+            this.coins=0;
+            this.course=[];
+            }
+            login()
+            {
+                console.log(`${user.name} has logged in`);
+                return this;
+            }
+            logout()
+            {
+                console.log(`${user.name} has logged out`); 
+                return this;  
+            }
+
+        }
+        class moderator extends user {
+            addcoin(user)
+            {
+                this.coins++;
+               
+            }
+            removecoin(user)
+            {
+                this.coins--;
+                ;
+            }
+        }
+        class Admin extends moderator{
+            addcourse(user,course)
+            {
+                user.course.push(course);
+                console.log(user);
+                
+            }
+            deletecourse(user,course)
+            {
+                user.course.pop(course);
+                
+            }
+        }
+        let user1=new user("Ravi",20,"ravi2gmail.com");
+        let user2=new user("Avi",22,"avi2gmail.com");
+        let mode=new moderator("hanu",26,"hanu@gmail.com");
+        let Admin1=new Admin("parsad",28,"parsad@gmail.com");
+
+
+        user1.login();
+        user2.logout();
+        mode.addcoin(user1);
+        mode.removecoin(user2);
+        Admin1.addcourse(user1,"JavaScript");
+        Admin1.addcourse(user1,"python");
+        Admin1.addcourse(user2,"Html");
+        Admin1.deletecourse(user1,"python");
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<html>
+<head>
+    <title>Question1</title>
+</head>
+<body>
+    <script>
+        var arr=[];
+        arr.length=prompt("tell us how many numbers youwant to enter");
+        for(i=0;i<arr.length;i++)
+        {
+            arr[i]=prompt("enter the number here");
+        }
+        arr.filter((el)=>el%2!==0)
+        console.log(arr);
+
+        let arrcube=arr.filter((el)=>el%2!==0).map((el)=>el**3);
+        console.log(arrcube);
+    </script>
+</body>
+</html>
